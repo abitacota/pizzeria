@@ -14,8 +14,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
-import { HttpClientModule} from "@angular/common/http";
-import 
+import { HttpClientModule } from "@angular/common/http";
+
+
+import {dbURL } from "../shared/dburl";
+
 
 
 @NgModule({
@@ -47,7 +50,7 @@ import
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DishProvider,
     LeaderProvider,
-    PromotionProvider
+    PromotionProvider,
     {provide: "DbURL", useValue: dbURL}
   ]
 })

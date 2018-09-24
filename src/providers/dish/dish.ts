@@ -19,21 +19,21 @@ export class DishProvider {
   constructor(public http: HttpClient) {
     console.log('Hello DishProvider Provider');
   }
-getDishes(): Observable<Dish[]>{
-	return this.http.get<Dish[]>(dbURL + "dishes").map( 
-	res => res
-	);
+	getDishes(): Observable<Dish[]>{
+		return this.http.get<Dish[]>(dbURL + "dishes").map( 
+			res => res
+		);
 
-}
-getDish(id: number): Observable<Dish>{
-	return this.http.get<Dish>(dbURL + "dish/" + id).map( 
-	res => res
-	);
+	}
+	getDish(id: number): Observable<Dish>{
+		return this.http.get<Dish>(dbURL + "dish/" + id).map( 
+			res => res
+		);
+	}
 
-
-getFeatureDish(): Observable<Dish>{
-	return this.http.get<Dish>(dbURL + "dishes?featured=true").map( 
-	res => res
-};
-}
+	getFeatureDish(): Observable<Dish>{
+		return this.http.get<Dish>(dbURL + "dishes?featured=true").map( 
+			res => res
+		);
+	}
 }

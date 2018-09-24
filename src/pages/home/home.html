@@ -3,10 +3,37 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Top Gun Pizza</ion-title>
   </ion-navbar>
 </ion-header>
 
+<ion-content class="orangeOne">
+  <ion-card *ng-if="dish; else loading"
+  >
+  <img src="{{dbURL + dish.image}}"
+   alt="{{dish.name}}">
+   <ion-card-content>
+     <ion-card-title>
+      {{dish.name / uppercase}}
+    </ion-card-title>
+    <p>
+      {{dish.description}}
+    </p>
+  </ion-card-content>
+</ion-card>
+<ion-card *ngIF="promotion; else
+loading">
+<img src="{{dbURL +
+promotion.image}}" alt="
+{{promotion.name}}">
+<ion-card-content>
+  <ion-card-title>
+    {{promotion.name / uppercase}}
+  </ion-card-title>
+  <p>
+    {{promotion.description}}
+  </p>
+  <
 <ion-content padding>
   <h3>Ionic Menu Starter</h3>
 
